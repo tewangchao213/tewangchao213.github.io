@@ -269,6 +269,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/03/Windows子系统Linux-WSL-下挂载exFat4格式的U盘/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tewangchao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tewangchao BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/03/Windows子系统Linux-WSL-下挂载exFat4格式的U盘/" itemprop="url">Windows子系统Linux(WSL)下挂载exFat4格式的U盘</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-03T09:36:12-05:00">
+                2019-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/三十学艺/" itemprop="url" rel="index">
+                    <span itemprop="name">三十学艺</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>在Surface GO上装了exFat4格式的U盘，但是在WSL中无法在/mnt目录下找到。</p>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>需要安装Linux下exFat的支持。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install exfat-fuse exfat-utils   # 安装exFat格式支持</span><br><span class="line">sudo mkdir /mnt/d                             # 准备挂载目录</span><br><span class="line">sudo mount -t drvfs D: /mnt/d                 # 挂载盘符</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/02/为什么要学习Linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1738,182 +1883,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/Protocol_HEXOandGITHUB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tewangchao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tewangchao BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/21/Protocol_HEXOandGITHUB/" itemprop="url">利用HEXO在GITHUB上部署个人网页的使用文档</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-21T13:06:12-05:00">
-                2019-09-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/三十学艺/" itemprop="url" rel="index">
-                    <span itemprop="name">三十学艺</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="主要过程"><a href="#主要过程" class="headerlink" title="主要过程"></a>主要过程</h4><ol>
-<li>备外部仓库（Github）；</li>
-<li>准备本地网页（HEXO）;</li>
-<li>利用HEXO生成本地网页；</li>
-<li>利用GIT工具将网页发布至Github。</li>
-</ol>
-<h4 id="外部仓库的准备"><a href="#外部仓库的准备" class="headerlink" title="外部仓库的准备"></a>外部仓库的准备</h4><ol>
-<li>注册github账号</li>
-<li>github账号下新建与用户名相同的仓库（repo）</li>
-<li>在repo下面的master分支下面创建博客页面</li>
-<li>经过设置页面下的博客生成，得到一个个人博客页面</li>
-</ol>
-<h4 id="本地网页的准备"><a href="#本地网页的准备" class="headerlink" title="本地网页的准备"></a>本地网页的准备</h4><ol>
-<li><p>需要安装node.js及Git windows2. </p>
-</li>
-<li><p>利用命令行安装hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g #安装hexo客户端</span><br><span class="line">hexo init &lt;文件夹名称&gt;</span><br><span class="line">cd &lt;文件夹名称&gt;</span><br><span class="line">npm install #hexo客户端安装默认配置</span><br><span class="line">hexo -v #确认hexo安装成功及版本</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进入我们需要发布的文件夹，右键“gitbash in this path”，常用的hexo命令及作用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo -new # 生成新的文件位于source/posts下</span><br><span class="line">hexo -generate # 生成静态网页</span><br><span class="line">hexo -server # 生成本地网页</span><br><span class="line">hexo -deploy # 发布到目的repo</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h4 id="链接github与hexo"><a href="#链接github与hexo" class="headerlink" title="链接github与hexo"></a>链接github与hexo</h4><ol>
-<li><p>链接github与本地需要秘钥，生成密钥方法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;github用户名&quot;</span><br><span class="line">git config --global user.email &quot;github注册邮箱&quot;</span><br><span class="line">ssh-keygen -t rsa -C &quot;github注册邮箱&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在github网站中录入密钥信息，个人设置-&gt;ssh and GPG keys-&gt;录入isa.pub的密钥信息</p>
-</li>
-<li><p>修改配置文件_config.yml中的deply信息</p>
-</li>
-<li><p>安装deploy插件</p>
-<p><code>npm i hexo-deployer-git</code></p>
-</li>
-</ol>
-<h4 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h4>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1964,7 +1933,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
