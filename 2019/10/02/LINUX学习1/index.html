@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="tewangchao BLOG">
 <meta property="og:description" content="入门Linux必须熟知Linux的文件管理方式，这是Linux及其他一些CLI软件的基础。 1. Linux的文件管理方式Linux脱胎于Unix，其核心思想：  多用户多任务，Unix最早是相容分时系统演变而来。 所有的程序或系统设备都是文件。 不管建构编辑器还是附属文件，所写的程序只有一个目的，且要有效的完成目标。  Linux的文件树： 12/: 为根目录，其下有/boot（启动），/bin">
 <meta property="og:locale" content="zh-hans">
-<meta property="og:updated_time" content="2019-10-02T19:21:54.000Z">
+<meta property="og:updated_time" content="2019-10-03T00:01:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LINUX学习（1）-Linux的文件管理">
 <meta name="twitter:description" content="入门Linux必须熟知Linux的文件管理方式，这是Linux及其他一些CLI软件的基础。 1. Linux的文件管理方式Linux脱胎于Unix，其核心思想：  多用户多任务，Unix最早是相容分时系统演变而来。 所有的程序或系统设备都是文件。 不管建构编辑器还是附属文件，所写的程序只有一个目的，且要有效的完成目标。  Linux的文件树： 12/: 为根目录，其下有/boot（启动），/bin">
@@ -370,9 +370,54 @@
 <li>不管建构编辑器还是附属文件，所写的程序只有一个目的，且要有效的完成目标。</li>
 </ol>
 <p>Linux的文件树：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/: 为根目录，其下有/boot（启动），/bin（常用命令），/etc（配置文件），/home（用户），/root（管理员）</span><br><span class="line">~：为用户目录，即/home/username</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/: 为根目录，其下有/boot（启动），/bin（常用命令），/etc（配置文件），/home（用户），/root（管理员），/usr（应用程序），/lib（基本代码库），/sys（内核文件系统）</span><br><span class="line">~：为用户目录，即/home/username</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-Linux的文件类型"><a href="#2-Linux的文件类型" class="headerlink" title="2. Linux的文件类型"></a>2. Linux的文件类型</h4><h4 id="3-Linux的文件编辑软件"><a href="#3-Linux的文件编辑软件" class="headerlink" title="3. Linux的文件编辑软件"></a>3. Linux的文件编辑软件</h4><h4 id="4-Linux的可执行文件"><a href="#4-Linux的可执行文件" class="headerlink" title="4. Linux的可执行文件"></a>4. Linux的可执行文件</h4>
+<h4 id="2-Linux的文件类型"><a href="#2-Linux的文件类型" class="headerlink" title="2. Linux的文件类型"></a>2. Linux的文件类型</h4><p>与windows文件不同，Linux的文件扩展名只起到标记作用。其文件属性可以用<code>ls -l</code>查看。<br>具体对应信息如下：</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2-3-4</th>
+<th>5-6-7</th>
+<th>8-9-10</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>文件属性</td>
+<td>root权限</td>
+<td>用户权限</td>
+<td>其他用户权限</td>
+</tr>
+<tr>
+<td>d:目录 -: 文件</td>
+<td>r-w-x</td>
+<td>r-w-x</td>
+<td>r-w-x</td>
+</tr>
+<tr>
+<td></td>
+<td>读-写-执行</td>
+<td>读-写-执行</td>
+<td>读-写-执行</td>
+</tr>
+</tbody></table>
+<p>使用chmod命令可以更改文件属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$chmod +x filename 			#给文件添加可执行属性</span><br><span class="line">$chmod -x filename          #给文件去除可执行属性</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-Linux的文件编辑软件"><a href="#3-Linux的文件编辑软件" class="headerlink" title="3. Linux的文件编辑软件"></a>3. Linux的文件编辑软件</h4><p>Linux有非常好用的文件编辑软件vim，常用方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$vim filename               #新建，打开文件</span><br><span class="line">键盘i                        #进入编辑模式</span><br><span class="line">Esc                         #退出编辑模式</span><br><span class="line">:wq                          #保存并退出</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-Linux的可执行文件"><a href="#4-Linux的可执行文件" class="headerlink" title="4. Linux的可执行文件"></a>4. Linux的可执行文件</h4><p>Linux下，所有的文件都可以具备可执行属性，但是能否成功执行取决于文件内容。 有多种方式可以执行文件</p>
+<ol>
+<li>编辑可执行文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#使用for循环批量创建10个文件 linux-1到linux-10</span><br><span class="line">#!/bin/sh</span><br><span class="line">[ ! -d $PWD/file ] &amp;&amp; mkdir -p $PWD/file &amp;&amp; exit 1</span><br><span class="line"> </span><br><span class="line">for count in `seq 10`</span><br><span class="line">do</span><br><span class="line">    touch $PWD/file/linux-$count</span><br><span class="line">done</span><br><span class="line">————————————————</span><br><span class="line">版权声明：本文为CSDN博主「乌托邦2号」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/taiyang1987912/article/details/39934055</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>将以上文件保存为<code>create.sh</code>,并利用<code>chmod +x create.sh</code>将该文件增加可执行属性。直接运行<code>./create.sh</code>即可。</p>
+<ol start="2">
+<li>上述文件还可以使用<code>sh create.sh</code>或<code>bash create.sh</code>运行。此时，文件开头的注释<code>#! /bin/sh</code>可以不写。该文件也可以不是可执行属性。</li>
+</ol>
+
       
     </div>
     
