@@ -400,6 +400,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/Protocol_HEXOandGITHUB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tewangchao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tewangchao BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/21/Protocol_HEXOandGITHUB/" itemprop="url">利用HEXO在GITHUB上部署个人网页的使用文档</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-21T13:06:12-05:00">
+                2019-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/三十学艺/" itemprop="url" rel="index">
+                    <span itemprop="name">三十学艺</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="主要过程"><a href="#主要过程" class="headerlink" title="主要过程"></a>主要过程</h4><ol>
+<li>备外部仓库（Github）；</li>
+<li>准备本地网页（HEXO）;</li>
+<li>利用HEXO生成本地网页；</li>
+<li>利用GIT工具将网页发布至Github。</li>
+</ol>
+<h4 id="外部仓库的准备"><a href="#外部仓库的准备" class="headerlink" title="外部仓库的准备"></a>外部仓库的准备</h4><ol>
+<li>注册github账号</li>
+<li>github账号下新建与用户名相同的仓库（repo）</li>
+<li>在repo下面的master分支下面创建博客页面</li>
+<li>经过设置页面下的博客生成，得到一个个人博客页面</li>
+</ol>
+<h4 id="本地网页的准备"><a href="#本地网页的准备" class="headerlink" title="本地网页的准备"></a>本地网页的准备</h4><ol>
+<li><p>需要安装node.js及Git windows2. </p>
+</li>
+<li><p>利用命令行安装hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g #安装hexo客户端</span><br><span class="line">hexo init &lt;文件夹名称&gt;</span><br><span class="line">cd &lt;文件夹名称&gt;</span><br><span class="line">npm install #hexo客户端安装默认配置</span><br><span class="line">hexo -v #确认hexo安装成功及版本</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入我们需要发布的文件夹，右键“gitbash in this path”，常用的hexo命令及作用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo -new # 生成新的文件位于source/posts下</span><br><span class="line">hexo -generate # 生成静态网页</span><br><span class="line">hexo -server # 生成本地网页</span><br><span class="line">hexo -deploy # 发布到目的repo</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="链接github与hexo"><a href="#链接github与hexo" class="headerlink" title="链接github与hexo"></a>链接github与hexo</h4><ol>
+<li><p>链接github与本地需要秘钥，生成密钥方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;github用户名&quot;</span><br><span class="line">git config --global user.email &quot;github注册邮箱&quot;</span><br><span class="line">ssh-keygen -t rsa -C &quot;github注册邮箱&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在github网站中录入密钥信息，个人设置-&gt;ssh and GPG keys-&gt;录入isa.pub的密钥信息</p>
+</li>
+<li><p>修改配置文件_config.yml中的deply信息</p>
+</li>
+<li><p>安装deploy插件</p>
+<p><code>npm i hexo-deployer-git</code></p>
+</li>
+</ol>
+<h4 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/Reading-and-Writing-Manuscript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -541,7 +717,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/Protocol_HEXOandGITHUB/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/向张博士学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="tewangchao">
@@ -560,7 +736,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/21/Protocol_HEXOandGITHUB/" itemprop="url">利用HEXO在GITHUB上部署个人网页的使用文档</a></h1>
+                <a class="post-title-link" href="/2019/09/15/向张博士学习/" itemprop="url">张泽民博士是一个典范</a></h1>
         
 
         <div class="post-meta">
@@ -572,8 +748,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-21T13:06:12-05:00">
-                2019-09-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-15T12:33:09-05:00">
+                2019-09-15
               </time>
             
 
@@ -595,8 +771,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/三十学艺/" itemprop="url" rel="index">
-                    <span itemprop="name">三十学艺</span>
+                  <a href="/categories/DATA/" itemprop="url" rel="index">
+                    <span itemprop="name">DATA</span>
                   </a>
                 </span>
 
@@ -634,42 +810,12 @@
       
         
           
-            <h4 id="主要过程"><a href="#主要过程" class="headerlink" title="主要过程"></a>主要过程</h4><ol>
-<li>备外部仓库（Github）；</li>
-<li>准备本地网页（HEXO）;</li>
-<li>利用HEXO生成本地网页；</li>
-<li>利用GIT工具将网页发布至Github。</li>
-</ol>
-<h4 id="外部仓库的准备"><a href="#外部仓库的准备" class="headerlink" title="外部仓库的准备"></a>外部仓库的准备</h4><ol>
-<li>注册github账号</li>
-<li>github账号下新建与用户名相同的仓库（repo）</li>
-<li>在repo下面的master分支下面创建博客页面</li>
-<li>经过设置页面下的博客生成，得到一个个人博客页面</li>
-</ol>
-<h4 id="本地网页的准备"><a href="#本地网页的准备" class="headerlink" title="本地网页的准备"></a>本地网页的准备</h4><ol>
-<li><p>需要安装node.js及Git windows2. </p>
-</li>
-<li><p>利用命令行安装hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g #安装hexo客户端</span><br><span class="line">hexo init &lt;文件夹名称&gt;</span><br><span class="line">cd &lt;文件夹名称&gt;</span><br><span class="line">npm install #hexo客户端安装默认配置</span><br><span class="line">hexo -v #确认hexo安装成功及版本</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进入我们需要发布的文件夹，右键“gitbash in this path”，常用的hexo命令及作用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo -new # 生成新的文件位于source/posts下</span><br><span class="line">hexo -generate # 生成静态网页</span><br><span class="line">hexo -server # 生成本地网页</span><br><span class="line">hexo -deploy # 发布到目的repo</span><br></pre></td></tr></table></figure>
+            <h4 id="我应该向张泽民博士学习"><a href="#我应该向张泽民博士学习" class="headerlink" title="我应该向张泽民博士学习"></a>我应该向张泽民博士学习</h4><p>张博士于南开大学获得遗传学学士学位，经CUSBEA项目于美国宾州州立大学获得生物化学与分子生物学博士学位。此外他还在加州大学伯克利分校获得了IT技术的训练，在加州大学旧金山分校的医学实验室完成了博士后训练。此后，张博士在著名生物医药公司基因泰克/罗氏（Genentech/Roche）工作了16年，担任癌症基因组学和生物信息学组的首席，致力于应用机器学习和高通量测序等高新技术进行抗癌药靶和生物标记物的发现。他在计算癌症生物学和癌症基因组学的多个方向上都是开拓者、引领者，如世界首例肿瘤全基因组测序即由张博士领导完成。张博士同时也是60个已获得授权的美国专利的发明人，并在目前正在临床试验中的多项癌症治疗药物的分子靶标的原创发现中做出了直接贡献。他同时也是多家国际知名杂志如Cell Systems、Genome Medicine和Cancer Informatics的编委。归国后，他先后获得了中组部千人计划学者和教育部长江特聘教授等荣誉。</p>
+<p>张博士是优秀的生物学前辈，他能跻身于CUSBEA计划前往美国深造。张博士也是生物信息学的前沿工作者，在早期就向生物信息学转变。他致力于生物学的实用意义，在医药公司工作。在建立实验室之后，他领导下的实验室也做出了有益于大众的工作。</p>
+<p>张博士的职业路径其实对于我这样的新人有极重要的借鉴意义。生物学中大数据的产生对于我来讲是一种机会。可以尝试接触其他领域。 正所谓：不妥协不屈就；有手艺；善于抓住机会；寻找全新市场；在全新市场中实现自己的理念。</p>
+<p>大数据（数据库管理、检索、可视化+excel、sql、r、python）是手艺，functional genectics in cells是机会，已经有足够的数据来实现一些项目，也有一些模板可供借鉴，如gepia。</p>
+<p>Practice makes practical.</p>
 
-</li>
-</ol>
-<h4 id="链接github与hexo"><a href="#链接github与hexo" class="headerlink" title="链接github与hexo"></a>链接github与hexo</h4><ol>
-<li><p>链接github与本地需要秘钥，生成密钥方法如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;github用户名&quot;</span><br><span class="line">git config --global user.email &quot;github注册邮箱&quot;</span><br><span class="line">ssh-keygen -t rsa -C &quot;github注册邮箱&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在github网站中录入密钥信息，个人设置-&gt;ssh and GPG keys-&gt;录入isa.pub的密钥信息</p>
-</li>
-<li><p>修改配置文件_config.yml中的deply信息</p>
-</li>
-<li><p>安装deploy插件</p>
-<p><code>npm i hexo-deployer-git</code></p>
-</li>
-</ol>
-<h4 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h4>
           
         
       
@@ -885,152 +1031,6 @@
 <!-- wp:paragraph {"fontSize":"normal"} -->
 <p class="has-normal-font-size">2019.06.01 于休斯顿公寓</p>
 <!-- /wp:paragraph -->
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/向张博士学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="tewangchao">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="tewangchao BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/15/向张博士学习/" itemprop="url">张泽民博士是一个典范</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-15T12:33:09-05:00">
-                2019-09-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DATA/" itemprop="url" rel="index">
-                    <span itemprop="name">DATA</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="我应该向张泽民博士学习"><a href="#我应该向张泽民博士学习" class="headerlink" title="我应该向张泽民博士学习"></a>我应该向张泽民博士学习</h4><p>张博士于南开大学获得遗传学学士学位，经CUSBEA项目于美国宾州州立大学获得生物化学与分子生物学博士学位。此外他还在加州大学伯克利分校获得了IT技术的训练，在加州大学旧金山分校的医学实验室完成了博士后训练。此后，张博士在著名生物医药公司基因泰克/罗氏（Genentech/Roche）工作了16年，担任癌症基因组学和生物信息学组的首席，致力于应用机器学习和高通量测序等高新技术进行抗癌药靶和生物标记物的发现。他在计算癌症生物学和癌症基因组学的多个方向上都是开拓者、引领者，如世界首例肿瘤全基因组测序即由张博士领导完成。张博士同时也是60个已获得授权的美国专利的发明人，并在目前正在临床试验中的多项癌症治疗药物的分子靶标的原创发现中做出了直接贡献。他同时也是多家国际知名杂志如Cell Systems、Genome Medicine和Cancer Informatics的编委。归国后，他先后获得了中组部千人计划学者和教育部长江特聘教授等荣誉。</p>
-<p>张博士是优秀的生物学前辈，他能跻身于CUSBEA计划前往美国深造。张博士也是生物信息学的前沿工作者，在早期就向生物信息学转变。他致力于生物学的实用意义，在医药公司工作。在建立实验室之后，他领导下的实验室也做出了有益于大众的工作。</p>
-<p>张博士的职业路径其实对于我这样的新人有极重要的借鉴意义。生物学中大数据的产生对于我来讲是一种机会。可以尝试接触其他领域。 正所谓：不妥协不屈就；有手艺；善于抓住机会；寻找全新市场；在全新市场中实现自己的理念。</p>
-<p>大数据（数据库管理、检索、可视化+excel、sql、r、python）是手艺，functional genectics in cells是机会，已经有足够的数据来实现一些项目，也有一些模板可供借鉴，如gepia。</p>
-<p>Practice makes practical.</p>
 
           
         
