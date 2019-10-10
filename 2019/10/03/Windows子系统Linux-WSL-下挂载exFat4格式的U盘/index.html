@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="问题描述在Surface GO上装了exFat4格式的U盘，但是在WSL中无法在/mnt目录下找到。 解决方法需要安装Linux下exFat的支持。 123sudo apt-get install exfat-fuse exfat-utils   # 安装exFat格式支持sudo mkdir /mnt/d                             # 准备挂载目录sudo moun">
+<meta name="description" content="问题描述在Surface GO上装了exFat4格式的U盘，但是在WSL中无法在/mnt目录下找到。 解决方法需要安装Linux下exFat的支持。 1234sudo apt-get install exfat-fuse exfat-utils   # 安装exFat格式支持sudo mkdir /mnt/d                             # 准备挂载目录sudo mou">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows子系统Linux(WSL)下挂载exFat4格式的U盘">
 <meta property="og:url" content="http://yoursite.com/2019/10/03/Windows子系统Linux-WSL-下挂载exFat4格式的U盘/index.html">
 <meta property="og:site_name" content="tewangchao BLOG">
-<meta property="og:description" content="问题描述在Surface GO上装了exFat4格式的U盘，但是在WSL中无法在/mnt目录下找到。 解决方法需要安装Linux下exFat的支持。 123sudo apt-get install exfat-fuse exfat-utils   # 安装exFat格式支持sudo mkdir /mnt/d                             # 准备挂载目录sudo moun">
+<meta property="og:description" content="问题描述在Surface GO上装了exFat4格式的U盘，但是在WSL中无法在/mnt目录下找到。 解决方法需要安装Linux下exFat的支持。 1234sudo apt-get install exfat-fuse exfat-utils   # 安装exFat格式支持sudo mkdir /mnt/d                             # 准备挂载目录sudo mou">
 <meta property="og:locale" content="zh-hans">
-<meta property="og:updated_time" content="2019-10-03T14:42:34.000Z">
+<meta property="og:updated_time" content="2019-10-06T08:20:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows子系统Linux(WSL)下挂载exFat4格式的U盘">
-<meta name="twitter:description" content="问题描述在Surface GO上装了exFat4格式的U盘，但是在WSL中无法在/mnt目录下找到。 解决方法需要安装Linux下exFat的支持。 123sudo apt-get install exfat-fuse exfat-utils   # 安装exFat格式支持sudo mkdir /mnt/d                             # 准备挂载目录sudo moun">
+<meta name="twitter:description" content="问题描述在Surface GO上装了exFat4格式的U盘，但是在WSL中无法在/mnt目录下找到。 解决方法需要安装Linux下exFat的支持。 1234sudo apt-get install exfat-fuse exfat-utils   # 安装exFat格式支持sudo mkdir /mnt/d                             # 准备挂载目录sudo mou">
 
 
 
@@ -354,7 +354,7 @@
       
         <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>在Surface GO上装了exFat4格式的U盘，但是在WSL中无法在/mnt目录下找到。</p>
 <h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>需要安装Linux下exFat的支持。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install exfat-fuse exfat-utils   # 安装exFat格式支持</span><br><span class="line">sudo mkdir /mnt/d                             # 准备挂载目录</span><br><span class="line">sudo mount -t drvfs D: /mnt/d                 # 挂载盘符</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install exfat-fuse exfat-utils   # 安装exFat格式支持</span><br><span class="line">sudo mkdir /mnt/d                             # 准备挂载目录</span><br><span class="line">sudo mount -t drvfs d: /mnt/d                 # 挂载盘符</span><br><span class="line">sudo umount /mnt/d                            # 退出linux前卸载U盘，否则下次会出错</span><br></pre></td></tr></table></figure>
 
 
       
@@ -475,7 +475,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -497,7 +497,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
