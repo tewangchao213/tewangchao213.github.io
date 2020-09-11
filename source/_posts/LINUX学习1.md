@@ -61,3 +61,4 @@ done
 将以上文件保存为`create.sh`,并利用`chmod +x create.sh`将该文件增加可执行属性。直接运行`./create.sh`即可。
 
 2. 上述文件还可以使用`sh create.sh`或`bash create.sh`运行。此时，文件开头的注释`#! /bin/sh`可以不写。该文件也可以不是可执行属性。
+
